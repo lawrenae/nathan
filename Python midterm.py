@@ -29,28 +29,23 @@ Klass = input('Enter a Class name. ')
 print("you have selected", Klass)
 
 
+def get_roll(current):
+    roll = int(input("Enter the numbers for your %s dice roll. " % current))
+    if roll > 24:
+        print("Number can't be higher than 24.")
+
+    return roll
+
 
 def rolling_stats():
-	roll_1 = int(input("Enter the numbers for your 1st dice roll. "))
-	if roll_1 > 24:
-		print("Number can't be higher than 24.")
-	roll_2 = int(input("Enter the numbers for your 2nd dice roll. "))
-	if roll_2 > 24:
-		print("Number can't be higher than 24.")
-	roll_3 = int(input("Enter the numbers for your 3rd dice roll. "))
-	if roll_3 > 24:
-		print("Number can't be higher than 24.")
-	roll_4 = int(input("Enter the numbers for your 4th dice roll. "))
-	if roll_4 > 24:
-		print("Number can't be higher than 24.")
-	roll_5 = int(input("Enter the numbers for your 5th dice roll. "))
-	if roll_5 > 24:
-		print("Number can't be higher than 24.")
-	roll_6 = int(input("Enter the numbers for your 6th dice roll. "))
-	if roll_6 > 24:
-		print("Number can't be higher than 24.")
-	else:
-		return print('Your highest roll is ', max(roll_1, roll_2, roll_3, roll_4, roll_5, roll_6))
+	roll_1 = get_roll("1st")
+	roll_2 = get_roll("2nd")
+	roll_3 = get_roll("3rd")
+	roll_4 = get_roll("4th")
+	roll_5 = get_roll("5th")
+	roll_6 = get_roll("6th")
+        
+	return print('Your highest roll is ', max(roll_1, roll_2, roll_3, roll_4, roll_5, roll_6))
 	
 	
 print()
