@@ -38,44 +38,52 @@ def get_roll(current):
 
 
 def rolling_stats():
-	roll_1 = get_roll("1st")
-	roll_2 = get_roll("2nd")
-	roll_3 = get_roll("3rd")
-	roll_4 = get_roll("4th")
-	roll_5 = get_roll("5th")
-	roll_6 = get_roll("6th")
+        too_big = 500 #dont like magic numbers
+        max_role = too_big
+
+        while (max_role > 24):
+            roll_1 = get_roll("1st")
+            roll_2 = get_roll("2nd")
+            roll_3 = get_roll("3rd")
+            roll_4 = get_roll("4th")
+            roll_5 = get_roll("5th")
+            roll_6 = get_roll("6th")
         
-	return print('Your highest roll is ', max(roll_1, roll_2, roll_3, roll_4, roll_5, roll_6))
+            max_role = max(roll_1, roll_2, roll_3, roll_4, roll_5, roll_6)
+
+            if max_role > too_big:
+                print("Retrying...")
+
+        return max_role
 	
 	
 print()
 print("ROLL FOR STRENGTH:")
 print(18 * "-")
-print(rolling_stats())
-
+print("Your highest roll is %d " % rolling_stats())
 
 print()
 print("ROLL FOR DEXTERITY:")
 print(20 * "-")
-rolling_stats()
+print("Your highest roll is %d " % rolling_stats())
 
 print()
 print("ROLL FOR CONSTITUTION:")
 print(25 * "-")
-rolling_stats()
+print("Your highest roll is %d " % rolling_stats())
 
 print()
 print("ROLL FOR INTELLIGENCE")
 print(25 * "-")
-rolling_stats()
+print("Your highest roll is %d " % rolling_stats())
 
 print()
 print("ROLL FOR WISDOM:")
 print(15 * "-")
-rolling_stats()
+print("Your highest roll is %d " % rolling_stats())
 
 print()
 print("ROLL FOR CHARISMA:")
 print(20 * "-")
-rolling_stats()
+print("Your highest roll is %d " % rolling_stats())
 
